@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Kim chan tae</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/common.css" />
+    <script src="dist/js/lory.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">About</a>
+            <a href="#">Project</a>
+            <a href="#">Portfolio</a>
+        </nav>
+        <section>
+            <h1>KIMCHANTAE
+                WEBPUBLISHER</h1>
+            <button type="button">Go to portfolio</button>
+        </section>
+    </header>
+    <section>
+        <h2>ABOUT</h2>
+        <figure>
+            <img src="dist/images/img_character.png" alt="Kim Chan Tae character" />
+            <img src="dist/images/img_face.png" alt="Kim Chan Tae face" />
+            <figcaption>“Que sera sera”</figcaption>
+        </figure>
+        <figure>
+            <img src="dist/images/icon_html.png" alt="HTML5" />
+            <figcaption>웹표준 마크업과<br />접근성을 준수한<br />HTML코딩작업을합니다.</figcaption>
+        </figure>
+        <figure>
+            <img src="dist/images/icon_css.png" alt="CSS3" />
+            <figcaption>반응형 및 적응형웹<br />크로스브라우징과<br />다양한 CSS 애니메이션<br />작업을합니다.</figcaption>
+        </figure>
+        <figure>
+            <img src="dist/images/icon_js.png" alt="javaScript" />
+            <figcaption>제이쿼리와 라이브러리<br />순수 자바스크립트를 이용한<br />스크립트작업을합니다.</figcaption>
+        </figure>
+    </section>
+    <section>
+        <h2>PORTFOLIO</h2>
+        <div>
+            <figure>
+                <img src="dist/images/img_pf1.png" alt="AJ파크 관리자" />
+            </figure>
+            <figure>
+                <img src="dist/images/img_pf2.png" alt="AJ파크 파트너 관리자" />
+            </figure>
+            <figure>
+                <img src="dist/images/img_pf3.png" alt="장플레이스랩" />
+            </figure>
+            <figure>
+                <img src="dist/images/img_pf4.png" alt="옥반식품" />
+            </figure>
+        </div>
+    </section>
+    <footer>ⓒ 2017. KIM CHAN TAE all rights reserved.<a href="mailto:nkdevil@naver.com">nkdevil@naver.com</a></footer>
+
+    <script>
+        function movePage(page) {
+            var wrap = document.querySelector('.wrap');
+            wrap.style.width = '0%';
+            setTimeout(function () { 
+                var request = new XMLHttpRequest();
+                request.open('GET', page , true);
+                request.onload = function () {
+                    if (request.status >= 200 && request.status < 400) {
+                        var contents = request.responseText;
+                        wrap.innerHTML = contents;
+                    }
+                };
+                request.send();
+                wrap.style.width = '100%';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
