@@ -2,9 +2,12 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Kim chan tae</title>
+    <title>Kim Chantae</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://nkdevil.github.io/kct/">
+    <meta name="description" content="Sites that introduce kct">
+    <meta name="author" content="Kim Chantae">
     <link rel="stylesheet" href="dist/css/reset.css" />
     <link rel="stylesheet" href="dist/css/common.css" />
     <script src="dist/js/lory.js"></script>
@@ -44,27 +47,41 @@
     </section>
     <section>
         <h2>PORTFOLIO</h2>
-        <div>
+        <ul>
+            <li onclick="movePage('ajpark')">AJ park admin</li>
+            <li onclick="movePage('ajpartner')">AJ park partner</li>
+            <li onclick="movePage('zlab')">Zlab homepage</li>
+            <li onclick="movePage('okban')">okban homepage</li>
+        </ul>
+        <div id="contentsWrap" class="close">
             <figure>
-                <img src="dist/images/img_pf1.png" alt="AJ파크 관리자" />
+                <img src="dist/images/portfolio_thumbnail1.png" alt="AJ파크 관리자" onclick="movePage('ajpark')" />
+                <figcaption>AJ파크 관리자웹</figcaption>
             </figure>
             <figure>
-                <img src="dist/images/img_pf2.png" alt="AJ파크 파트너 관리자" />
+                <img src="dist/images/portfolio_thumbnail3.png" alt="AJ파크 파트너 관리자" onclick="movePage('ajpartner')" />
+                <figcaption>AJ파크 파트너 웹</figcaption>
             </figure>
             <figure>
-                <img src="dist/images/img_pf3.png" alt="장플레이스랩" />
+                <img src="dist/images/portfolio_thumbnail4.png" alt="장플레이스랩" onclick="movePage('zlab')" />
+                <figcaption>장플레이스랩 홈페이지</figcaption>
             </figure>
             <figure>
-                <img src="dist/images/img_pf4.png" alt="옥반식품" />
+                <img src="dist/images/portfolio_thumbnail2.png" alt="옥반식품" onclick="movePage('okban')" />
+                <figcaption>옥반식품 홈페이지</figcaption>
             </figure>
         </div>
     </section>
     <footer>ⓒ 2017. KIM CHAN TAE all rights reserved.<a href="mailto:nkdevil@naver.com">nkdevil@naver.com</a></footer>
-
     <script>
-        function movePage(page) {
-            var wrap = document.querySelector('.wrap');
-            wrap.style.width = '0%';
+       
+        var wrap = document.getElementById('contentsWrap');
+        var viewPosition = wrap.getBoundingClientRect().top + window.pageYOffset;
+
+        function movePage(fn) {
+            TopscrollTo();
+            var page = fn + '.html';
+            wrap.className = 'open';
             setTimeout(function () { 
                 var request = new XMLHttpRequest();
                 request.open('GET', page , true);
@@ -75,8 +92,31 @@
                     }
                 };
                 request.send();
-                wrap.style.width = '100%';
+                window.location.href = '#' + fn;
+                wrap.className = 'close';
             }, 1000);
+            contentsList();
+        }
+
+        function TopscrollTo() {
+            console.log(viewPosition);
+            if (window.scrollY <= viewPosition) {
+                return;
+            }else if (window.scrollY > viewPosition) {
+                setTimeout(function () {
+                    window.scrollTo(0 , window.scrollY - 30);
+                    TopscrollTo();
+                }, 5);
+            }
+        }
+
+        function contentsList() {
+            document.querySelector('ul').className = 'active';
+        }
+
+        window.onscroll = function () {
+            var headerPosition = document.querySelector('header').offsetHeight;
+            console.log(headerPosition);
         }
     </script>
 </body>
