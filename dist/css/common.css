@@ -55,7 +55,7 @@ article h3{padding-top:100px; font-family:'Roboto', sans-serif; font-size:60px; 
 article > img{width:100%; padding-top:20px; }
 article figure{width:90%; margin:0 auto; padding:2% 1%; text-align:center; background:#fff; }
 article figure img{width:30%; float:left; margin:0 1%; border:1px solid #ccc; }
-article figure:after{content:""; display:block; clear:none; visibility:hidden; }
+article figure:after{content:""; display:block; clear:both; visibility:hidden; }
 article p{padding:30px; font-family: 'Noto Sans KR', sans-serif; font-size:20px; line-height:1.5em; color:#3a3a3a; }
 
 footer{font-family:'Roboto', sans-serif; padding:0 20px; line-height:50px; background:#fff; color:#4d4d4d; }
