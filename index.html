@@ -10,7 +10,6 @@
     <meta name="author" content="Kim Chantae">
     <link rel="stylesheet" href="dist/css/reset.css" />
     <link rel="stylesheet" href="dist/css/common.css" />
-    <script src="dist/js/lory.js"></script>
 </head>
 <body>
     <header>
@@ -48,10 +47,12 @@
     <section>
         <h2>PORTFOLIO</h2>
         <ul>
+            <li onclick="location.href='index.html'">main</li>
             <li onclick="movePage('ajpark')">AJ park admin</li>
             <li onclick="movePage('ajpartner')">AJ park partner</li>
             <li onclick="movePage('zlab')">Zlab homepage</li>
             <li onclick="movePage('okban')">okban homepage</li>
+            <li onclick="movePage('aligo')">aligo main</li>
         </ul>
         <div id="contentsWrap" class="close">
             <figure>
@@ -70,6 +71,10 @@
                 <img src="dist/images/portfolio_thumbnail2.png" alt="옥반식품" onclick="movePage('okban')" />
                 <figcaption>옥반식품 홈페이지</figcaption>
             </figure>
+            <figure>
+                <img src="dist/images/portfolio_thumbnail5.png" alt="알리고" onclick="movePage('aligo')" />
+                <figcaption>알리고 메인페이지</figcaption>
+            </figure>
         </div>
     </section>
     <footer>ⓒ 2017. KIM CHAN TAE all rights reserved.<a href="mailto:nkdevil@naver.com">nkdevil@naver.com</a></footer>
@@ -82,9 +87,9 @@
             TopscrollTo();
             var page = fn + '.html';
             wrap.className = 'open';
-            setTimeout(function () { 
+            setTimeout(function () {
                 var request = new XMLHttpRequest();
-                request.open('GET', page , true);
+                request.open('GET', page, true);
                 request.onload = function () {
                     if (request.status >= 200 && request.status < 400) {
                         var contents = request.responseText;
@@ -93,8 +98,10 @@
                 };
                 request.send();
                 window.location.href = '#' + fn;
+            }, 500);
+            setTimeout(function () {
                 wrap.className = 'close';
-            }, 1000);
+            }, 500);
             contentsList();
         }
 
