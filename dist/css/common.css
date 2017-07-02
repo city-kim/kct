@@ -6,7 +6,6 @@ section h2{font-family: 'Kaushan Script', cursive; font-size:45px; text-align:ce
 header{height:100%; background:url(../images/header_bg.png) center center no-repeat; }
 header section{box-sizing:border-box; -webkit-box-sizing:border-box; }
 header section h1{font-family: 'Kaushan Script', cursive; white-space:pre-line; color:#fff; }
-header section button{font-family: 'Roboto', sans-serif; color:#f1f1f1; padding:10px 5%; border:4px solid #fff; background:rgba(255,255,255,0.2); box-sizing:border-box; -webkit-box-sizing:border-box; -webkit-appearance:none; }
 
 body > section{width:100%; }
 body > section:nth-child(2){background:url(../images/about_bg.png) center center no-repeat; background-size:cover; background-attachment:fixed; padding-bottom:30px; transition:0.5s; }
@@ -45,8 +44,7 @@ footer a{float:right; color:#333; }
 
 @media screen and (min-width:1281px){
     header section{width:55%;padding-top:20%;  float:right; padding-left:20px; }
-    header section h1{font-size:76px; line-height:1em; }
-    header section button{width:50%; margin-top:20px; font-size:36px; }
+    header section h1{font-size:76px; line-height:1.5em; }
     section h2 + ul.active{opacity:1; transition:0.3s; transition-delay:1.5s; }
     section h2 + ul li{margin-top:10px; padding:0 10px; font-size:14px; line-height:2em; }
     section h2 ~ button{display:none; }
@@ -70,8 +68,7 @@ footer a{float:right; color:#333; }
 
 @media screen and (max-width:1280px) and (min-width:960px){
     header section{width:55%; padding-top:27%; float:right; padding-left:20px; }
-    header section h1{font-size:55px; line-height:1em; }
-    header section button{width:85%; margin-top:20px; font-size:35px; }
+    header section h1{font-size:55px; line-height:1.5em; }
     section h2 + ul.active{opacity:1; transition:0.3s; transition-delay:1.5s; }
     section h2 + ul li{margin-top:10px; padding:0 10px; font-size:14px; line-height:2em; }
     section h2 ~ button{display:none; }
@@ -95,8 +92,7 @@ footer a{float:right; color:#333; }
 
 @media screen and (max-width:959px) and (min-width:768px){
     header section{width:55%; padding-top:50%; float:right; padding-left:20px; }
-    header section h1{font-size:40px; line-height:1.3em; }
-    header section button{width:85%; margin-top:20px; font-size:35px; }
+    header section h1{font-size:40px; line-height:1.5em; }
     section h2 + ul.active{opacity:1; transition:0.3s; transition-delay:1.5s; }
     section h2 + ul li{margin-top:10px; padding:0 10px; font-size:14px; line-height:2em; }
     section h2 ~ button{display:none; }
@@ -121,7 +117,6 @@ footer a{float:right; color:#333; }
 @media screen and (max-width:767px) and (min-width:320px) {
     header section{width:100%; padding-top:50%; text-align:center; }
     header section h1{font-size:38px; line-height:1.5em; }
-    header section button{width:85%; margin-top:20px; font-size:35px; }
     section h2 + ul, section h2 + ul.active{opacity:0; display:none; transition:0.3s; }
     section h2 + ul.open{opacity:1; display:block; transition:0.3s; }
     section h2 + ul + button, section h2 + ul.active + button{display:none; }
