@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="kr">
+</head>
+</head>
+   <body>
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <script>
+      var value = Math.round(Math.random());
+      var num, string, way;
+      if (value === 1) {
+        num = '1번';
+        string = '해라';
+        way = '왼쪽';
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+      } else {
+        num = '2번';
+        string = '하지마셈';
+        way = '오른쪽';
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+      }
+      document.querySelector('h1').innerHTML = num;
+      document.querySelector('h2').innerHTML = string;
+      document.querySelector('h3').innerHTML = way;
+    </script>
+   </body>
+ </html>
