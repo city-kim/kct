@@ -26,8 +26,11 @@
     <h1></h1>
     <h2></h2>
     <h3></h3>
+    <h4></h4>
     <script>
-      var value = Math.round(Math.random());
+      var random = Math.random();
+      var value = Math.round(random);
+      var percent = (random*100).toString().substring(0,4);
       var num, string, way;
       if (value === 1) {
         num = '1번';
@@ -45,6 +48,7 @@
       document.querySelector('h1').innerHTML = num;
       document.querySelector('h2').innerHTML = string;
       document.querySelector('h3').innerHTML = way;
+      docuemnert.querySelector('h3').innerHTML = percent + '%';
     </script>
    </body>
 </html>
